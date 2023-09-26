@@ -3,7 +3,7 @@ import WebFont from "webfontloader";
 import React, { Profiler } from "react";
 import Footer from "./component/layout/Footer/Footer";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./component/Home/Home.js";
 import ProductDetails from "./component/Product/ProductDetails.js";
 import ProductReview from "./component/Product/ProductReview.js";
