@@ -1,0 +1,129 @@
+#footer {
+  height: 57vh;
+  background-color: #ffcce6;
+  padding: 0 .5rem;
+  div {
+    margin: 0;
+  }
+}
+.up {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 88%;
+  font-family: Roboto;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  .leftfooter {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid rgba(0, 206, 209,.4);
+    p {
+      text-align: center;
+      margin: 0;
+      font-size:1rem;
+      > h2 {
+        font-size:1.5rem;
+        margin: 0;
+      }
+    }
+    img {
+      width: 14vw;
+      height: 14vw;
+      object-fit: contain;
+    }
+  }
+  .midfooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-right: 2px solid rgba(0, 206, 209,.4);
+
+    > h1 {
+      margin: 0;
+      font-size: 5vmax;
+      color: rgba(255, 0, 0,.7);
+      font-family:Righteous;
+    }
+    >p{
+        font-size:1rem;
+    }
+  }
+  .rightfooter {
+    text-align: center;
+    a {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+      text-decoration: none;
+      color: #c13584;
+      &:nth-child(3) {
+        color: red;
+      }
+      &:last-child {
+        color: #1da1f2;
+      }
+      &:hover{
+        color: whitesmoke;
+        transition: color .5s;
+      }
+      > p {
+        text-align: end;
+        margin: 1rem;
+        font-size: 1.5rem;
+      }
+      > svg {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.down {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(0, 206, 209,.3);
+  align-items: center;
+  color: black;
+  height:12%;
+//   padding-top:.2rem;
+  a{
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: black;
+      >svg{
+      color:red;
+      }
+  }
+  p {
+    margin: 0;
+  }
+}
+@media screen and (max-width:525px){
+  #footer{
+    height: 100vh;
+    .up{
+      display: flex;
+      flex-direction: column;
+      >div{
+        border-right: none;
+      border-bottom:2px solid rgba(0, 206, 209,.4);
+      }
+    }
+    .down{
+      flex-direction: column;
+      border-top: none;
+    }
+  }
+  .leftfooter{
+    >img{
+      width: 20vmax !important;
+      height: 20vmax !important;
+    }
+  }
+}
