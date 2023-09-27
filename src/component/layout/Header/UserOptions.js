@@ -15,6 +15,9 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import Profile from "../../User/Profile";
 import { useSelector } from "react-redux";
 const UserOptions = ({ user }) => {
+  if(!user){
+    return ;
+  }
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const alert = useAlert();
