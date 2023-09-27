@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://konukkupoo-backend.vercel.app/',
+      target: 'https://localhost:4000/',
       changeOrigin: true,
     })
   );
