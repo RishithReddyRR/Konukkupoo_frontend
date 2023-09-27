@@ -36,7 +36,7 @@
     "sass": "^1.61.0",
     "web-vitals": "^2.1.4",
     "webfontloader": "^1.6.28",
-    "homepage":"https://rishithreddyrr.github.io/Konukkupoo_frontend/"
+    "homepage":"https://RishithReddyRR.github.io/Konukkupoo_frontend/"
   },
   "scripts": {
     "start": "react-scripts start",
