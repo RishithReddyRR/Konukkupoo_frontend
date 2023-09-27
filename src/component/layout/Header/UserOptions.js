@@ -15,9 +15,6 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import Profile from "../../User/Profile";
 import { useSelector } from "react-redux";
 const UserOptions = ({ user }) => {
-  if(!user){
-    return ;
-  }
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -68,7 +65,7 @@ const UserOptions = ({ user }) => {
         icon={
           <img
             className="speedDialIcon"
-            src={user.avatar.url ? user.avatar.url : "/Profile.png"}
+            src={user&&user.avatar.url ? user.avatar.url : "/Profile.png"}
             alt="Profile"
           />
         }
