@@ -64,5 +64,6 @@
   },
   "devDependencies": {
     "react-rating-stars-component": "^2.2.0"
-  }
+  },
+  "proxy":"https://konukkupoo-backend.vercel.app"
 }
