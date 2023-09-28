@@ -1,1 +1,1 @@
-global.url="https://konukkupoo-backend.vercel.app/"
+global.url=https://konukkupoo-backend.vercel.app/
