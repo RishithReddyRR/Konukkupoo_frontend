@@ -1,7 +1,7 @@
 
   
   import axios from "axios";
-   import "../const.js"
+   const global={url:"https://konukkupoo-backend.vercel.app"
   
   // Create Order
   export const createOrder = (order) => async (dispatch) => {
