@@ -1,9 +1,10 @@
 import axios from "axios";
 import {useSelector} from 'react-redux'
+import "../const.js
 //add to cart
 
 export const addItemToCart = (id, quantity) => async (dispatch,getState) => {
-    const { data } = await axios.get(`/api/v1/product/${id}`);
+    const { data } = await axios.get(`${global.url}/api/v1/product/${id}`);
  
     dispatch({ type: "ADD_TO_CART", payload: {
         product:id,
