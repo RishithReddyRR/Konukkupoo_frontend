@@ -1,5 +1,5 @@
 import axios from "axios";
-const global={url:"https://konukkupoo-backend.vercel.app"
+const global={url:"https://konukkupoo-backend.vercel.app"}
 //get products
 export const getProducts =
   (keyword = "", currentPage,price=[0,25000],category,ratings=0) =>
