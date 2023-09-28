@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../const.js"
+const global={url:"https://konukkupoo-backend.vercel.app"}
 //LOGIN
 export const login = (email, password) => async (dispatch) => {
   try {
