@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useSelector} from 'react-redux'
 //add to cart
-const global={url:"https://konukkupoo-backend.vercel.app"
+const global={url:"https://konukkupoo-backend.vercel.app"}
 export const addItemToCart = (id, quantity) => async (dispatch,getState) => {
     const { data } = await axios.get(`${global.url}/api/v1/product/${id}`);
  
