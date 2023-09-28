@@ -1,4 +1,5 @@
 import axios from "axios";
+import "../const.js"
 //get products
 export const getProducts =
   (keyword = "", currentPage,price=[0,25000],category,ratings=0) =>
@@ -6,10 +7,10 @@ export const getProducts =
     console.log("inside");
     try {
       dispatch({ type: "ALL_PRODUCT_REQUEST" });
-      let link = `https://konukkupoo-backend.vercel.app/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
+      let link = `${global.url}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
 
       if (category) {
-        link = `https://konukkupoo-backend.vercel.app/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
+        link = `${global.url}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
       }
       const { data } = await axios(link);
       dispatch({
@@ -28,7 +29,7 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: "ADMIN_PRODUCT_REQUEST" });
 
-    const { data } = await axios.get("/api/v1/admin/products");
+    const { data } = await axios.get(`${global.url}/api/v1/admin/products`);
 
     dispatch({
       type: "ADMIN_PRODUCT_SUCCESS",
@@ -54,7 +55,7 @@ export const clearErrors = () => async (dispatch) => {
 export const getProductsDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_DETAILS_REQUEST" });
-    const { data } = await axios(`/api/v1/product/${id}`);
+    const { data } = await axios(`${global.url}/api/v1/product/${id}`);
     dispatch({
       type: "PRODUCT_DETAILS_SUCCESS",
       payload: data.product,
@@ -78,7 +79,7 @@ export const newReview = (formData) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const { data } = await axios.put(`/api/v1/review`,formData,config);
+    const { data } = await axios.put(`${global.url}/api/v1/review`,formData,config);
    dispatch({type:"NEW_REVIEW_SUCCESS",payload:data.success})
    console.log("hello")
   } catch (error) {
@@ -100,7 +101,7 @@ export const createProduct = (productData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `/api/v1/admin/products/new`,
+      `${global.url}/api/v1/admin/products/new`,
       productData,
       config
     );
@@ -124,7 +125,7 @@ export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: "DELETE_PRODUCT_REQUEST" });
 
-    const { data } = await axios.delete(`/api/v1/admin/product/${id}`);
+    const { data } = await axios.delete(`${global.url}/api/v1/admin/product/${id}`);
 
     dispatch({
       type:"DELETE_PRODUCT_SUCCESS",
